@@ -5,9 +5,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className='w-screen h-screen flex justify-center bg-blue-200'>
-        <Outlet />
-      </div>
+      <Outlet />
       <TanStackDevtools
         config={{
           position: 'bottom-right',
