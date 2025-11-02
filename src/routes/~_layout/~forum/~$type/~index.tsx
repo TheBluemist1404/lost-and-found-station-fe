@@ -14,11 +14,14 @@ export const Route = createFileRoute('/_layout/forum/$type/')({
 })
 
 function RouteComponent() {
-  // const params = Route.useParams();
+  const params = Route.useParams()
 
   return (
     <div className="flex flex-row w-full h-full ">
       <SideBar />
+      <div>
+        <p>{params.type} Report</p>
+      </div>
     </div>
   )
 }
