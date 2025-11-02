@@ -9,128 +9,154 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/~__root'
-import { Route as IndexRouteImport } from './routes/~index'
-import { Route as AuthSignupRouteImport } from './routes/~_auth/~signup'
-import { Route as AuthLoginRouteImport } from './routes/~_auth/~login'
-import { Route as ProfileIndexRouteImport } from './routes/~profile/~index'
-import { Route as ForumIndexRouteImport } from './routes/~forum/~index'
+import { Route as LayoutRouteImport } from './routes/~_layout'
+import { Route as LayoutIndexRouteImport } from './routes/~_layout/~index'
+import { Route as LayoutAuthSignupRouteImport } from './routes/~_layout/~_auth/~signup'
+import { Route as LayoutAuthLoginRouteImport } from './routes/~_layout/~_auth/~login'
+import { Route as LayoutProfileUserIdIndexRouteImport } from './routes/~_layout/~profile.$userId/~index'
+import { Route as LayoutForumTypeIndexRouteImport } from './routes/~_layout/~forum/~$type/~index'
 
-const IndexRoute = IndexRouteImport.update({
+const LayoutRoute = LayoutRouteImport.update({
+  id: '/_layout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LayoutIndexRoute = LayoutIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => LayoutRoute,
 } as any)
-const AuthSignupRoute = AuthSignupRouteImport.update({
+const LayoutAuthSignupRoute = LayoutAuthSignupRouteImport.update({
   id: '/_auth/signup',
   path: '/signup',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => LayoutRoute,
 } as any)
-const AuthLoginRoute = AuthLoginRouteImport.update({
+const LayoutAuthLoginRoute = LayoutAuthLoginRouteImport.update({
   id: '/_auth/login',
   path: '/login',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => LayoutRoute,
 } as any)
-const ProfileIndexRoute = ProfileIndexRouteImport.update({
-  id: '/profile/',
-  path: '/profile/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForumIndexRoute = ForumIndexRouteImport.update({
-  id: '/forum/',
-  path: '/forum/',
-  getParentRoute: () => rootRouteImport,
+const LayoutProfileUserIdIndexRoute =
+  LayoutProfileUserIdIndexRouteImport.update({
+    id: '/profile/$userId/',
+    path: '/profile/$userId/',
+    getParentRoute: () => LayoutRoute,
+  } as any)
+const LayoutForumTypeIndexRoute = LayoutForumTypeIndexRouteImport.update({
+  id: '/forum/$type/',
+  path: '/forum/$type/',
+  getParentRoute: () => LayoutRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/forum': typeof ForumIndexRoute
-  '/profile': typeof ProfileIndexRoute
-  '/login': typeof AuthLoginRoute
-  '/signup': typeof AuthSignupRoute
+  '/': typeof LayoutIndexRoute
+  '/login': typeof LayoutAuthLoginRoute
+  '/signup': typeof LayoutAuthSignupRoute
+  '/forum/$type': typeof LayoutForumTypeIndexRoute
+  '/profile/$userId': typeof LayoutProfileUserIdIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/forum': typeof ForumIndexRoute
-  '/profile': typeof ProfileIndexRoute
-  '/login': typeof AuthLoginRoute
-  '/signup': typeof AuthSignupRoute
+  '/': typeof LayoutIndexRoute
+  '/login': typeof LayoutAuthLoginRoute
+  '/signup': typeof LayoutAuthSignupRoute
+  '/forum/$type': typeof LayoutForumTypeIndexRoute
+  '/profile/$userId': typeof LayoutProfileUserIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/forum/': typeof ForumIndexRoute
-  '/profile/': typeof ProfileIndexRoute
-  '/_auth/login': typeof AuthLoginRoute
-  '/_auth/signup': typeof AuthSignupRoute
+  '/_layout': typeof LayoutRouteWithChildren
+  '/_layout/': typeof LayoutIndexRoute
+  '/_layout/_auth/login': typeof LayoutAuthLoginRoute
+  '/_layout/_auth/signup': typeof LayoutAuthSignupRoute
+  '/_layout/forum/$type/': typeof LayoutForumTypeIndexRoute
+  '/_layout/profile/$userId/': typeof LayoutProfileUserIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/forum' | '/profile' | '/login' | '/signup'
+  fullPaths: '/' | '/login' | '/signup' | '/forum/$type' | '/profile/$userId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/forum' | '/profile' | '/login' | '/signup'
+  to: '/' | '/login' | '/signup' | '/forum/$type' | '/profile/$userId'
   id:
     | '__root__'
-    | '/'
-    | '/forum/'
-    | '/profile/'
-    | '/_auth/login'
-    | '/_auth/signup'
+    | '/_layout'
+    | '/_layout/'
+    | '/_layout/_auth/login'
+    | '/_layout/_auth/signup'
+    | '/_layout/forum/$type/'
+    | '/_layout/profile/$userId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  ForumIndexRoute: typeof ForumIndexRoute
-  ProfileIndexRoute: typeof ProfileIndexRoute
-  AuthLoginRoute: typeof AuthLoginRoute
-  AuthSignupRoute: typeof AuthSignupRoute
+  LayoutRoute: typeof LayoutRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_layout': {
+      id: '/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof LayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_layout/': {
+      id: '/_layout/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof LayoutIndexRouteImport
+      parentRoute: typeof LayoutRoute
     }
-    '/_auth/signup': {
-      id: '/_auth/signup'
+    '/_layout/_auth/signup': {
+      id: '/_layout/_auth/signup'
       path: '/signup'
       fullPath: '/signup'
-      preLoaderRoute: typeof AuthSignupRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof LayoutAuthSignupRouteImport
+      parentRoute: typeof LayoutRoute
     }
-    '/_auth/login': {
-      id: '/_auth/login'
+    '/_layout/_auth/login': {
+      id: '/_layout/_auth/login'
       path: '/login'
       fullPath: '/login'
-      preLoaderRoute: typeof AuthLoginRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof LayoutAuthLoginRouteImport
+      parentRoute: typeof LayoutRoute
     }
-    '/profile/': {
-      id: '/profile/'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof ProfileIndexRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_layout/profile/$userId/': {
+      id: '/_layout/profile/$userId/'
+      path: '/profile/$userId'
+      fullPath: '/profile/$userId'
+      preLoaderRoute: typeof LayoutProfileUserIdIndexRouteImport
+      parentRoute: typeof LayoutRoute
     }
-    '/forum/': {
-      id: '/forum/'
-      path: '/forum'
-      fullPath: '/forum'
-      preLoaderRoute: typeof ForumIndexRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_layout/forum/$type/': {
+      id: '/_layout/forum/$type/'
+      path: '/forum/$type'
+      fullPath: '/forum/$type'
+      preLoaderRoute: typeof LayoutForumTypeIndexRouteImport
+      parentRoute: typeof LayoutRoute
     }
   }
 }
 
+interface LayoutRouteChildren {
+  LayoutIndexRoute: typeof LayoutIndexRoute
+  LayoutAuthLoginRoute: typeof LayoutAuthLoginRoute
+  LayoutAuthSignupRoute: typeof LayoutAuthSignupRoute
+  LayoutForumTypeIndexRoute: typeof LayoutForumTypeIndexRoute
+  LayoutProfileUserIdIndexRoute: typeof LayoutProfileUserIdIndexRoute
+}
+
+const LayoutRouteChildren: LayoutRouteChildren = {
+  LayoutIndexRoute: LayoutIndexRoute,
+  LayoutAuthLoginRoute: LayoutAuthLoginRoute,
+  LayoutAuthSignupRoute: LayoutAuthSignupRoute,
+  LayoutForumTypeIndexRoute: LayoutForumTypeIndexRoute,
+  LayoutProfileUserIdIndexRoute: LayoutProfileUserIdIndexRoute,
+}
+
+const LayoutRouteWithChildren =
+  LayoutRoute._addFileChildren(LayoutRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  ForumIndexRoute: ForumIndexRoute,
-  ProfileIndexRoute: ProfileIndexRoute,
-  AuthLoginRoute: AuthLoginRoute,
-  AuthSignupRoute: AuthSignupRoute,
+  LayoutRoute: LayoutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
