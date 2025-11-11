@@ -25,7 +25,7 @@ function RouteComponent() {
   return (
     <div className="flex flex-row w-full h-full ">
       <SideBar />
-      <div className="bg-white flex-1 flex flex-col px-15 py-5">
+      <div className="bg-white flex-1 flex flex-col px-38 py-5">
         <p>{params.type} Report</p>
 
         <div className="flex flex-row justify-between mt-5 gap-10 ">
