@@ -6,6 +6,7 @@
   --color-yellow: #ffd600;
   --color-wood: #2e2600;
   --color-cloudwhite: #f9fafb;
+  --color-gray: #777777;
 }
 
 @layer utilities {
