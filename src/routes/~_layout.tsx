@@ -9,7 +9,7 @@ function RouteComponent() {
   return (
     <>
       <Header />
-      <div className="w-screen h-screen pt-[88px] flex flex-col">
+      <div className="w-screen h-screen flex flex-col">
         <Outlet />
       </div>
     </>
