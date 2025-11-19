@@ -36,45 +36,42 @@ function useScrollFadeIn() {
 function HeroSection() {
   return (
     <section
-      className="relative h-screen overflow-hidden bg-cover bg-center"
+      className="relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center py-40 px-20"
       style={{ backgroundImage: `url(${bkuImg})` }}
     >
-      <div className="pointer-events-none absolute inset-0 bg-wood bg-cover opacity-80 mix-blend-multiply backdrop-blur-3xl" />
+      <div className="pointer-events-none absolute top-0 left-0 h-full w-full bg-wood opacity-90 backdrop-blur-3xl" />
 
-      <div className="relative z-10 w-full h-full mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
-        <div className="max-w-3xl space-y-4 sm:space-y-6 md:space-y-8">
-          <h1 className="font-bold leading-[0.9] text-yellow text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-            Lost and Found
-            <br />
-            Station
-          </h1>
+      <div className="relative z-10 w-full h-full flex flex-row gap-12 items-stretch justify-between px-6 sm:px-8 md:px-16">
+        <div className="flex-1 h-full flex flex-col justify-between">
+          <div className="flex flex-col gap-12">
+            <h1 className="font-bold text-yellow text-4xl sm:text-6xl lg:text-8xl/tight">
+              Lost and Found Station
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
+              The on-campus support to bring belongings back to their owners.
+            </p>
+          </div>
 
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
-            The on-campus support to bring belongings back to their owners.
-          </p>
-
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-6 md:gap-8">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white">
-              We have returned
-              <span className="inline-flex h-12 sm:h-14 md:h-16 lg:h-20 min-w-[3rem] sm:min-w-[3.5rem] md:min-w-[4.5rem] lg:min-w-[5rem] items-center justify-center border-2 border-yellow mx-3 sm:mx-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-yellow">
+          <div className="w-full flex flex-row items-center justify-between flex-wrap">
+            <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-white flex flex-row items-center gap-2">
+              <span>We</span> <span>have</span> <span>returned</span>
+              <span className="p-2 mx-2 border-2 border-yellow text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-yellow">
                 20
               </span>
-              items back home.
+              <span>items</span> <span>back</span> home
             </p>
-            <button className="bg-yellow px-10 sm:px-12 md:px-16 lg:px-20 py-4 sm:py-5 md:py-6 lg:py-8 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-black shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
+            <button className="bg-yellow rounded-md px-6 py-4 text-2xl font-medium text-black shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
               Join our journey
             </button>
           </div>
         </div>
 
-        <div className="relative hidden md:flex flex-shrink-0 items-center justify-center flex-1">
-          <div className="flex h-80 sm:h-96 md:h-[500px] lg:h-[600px] w-80 sm:w-96 md:w-[500px] lg:w-[600px] items-center justify-center rounded-full drop-shadow">
-            <img
-              src={homeImg}
-              alt="Lost and found illustration"
-              className="h-full w-full object-contain"
-            />
-          </div>
+        <div className="relative hidden md:flex items-center justify-center flex-[0.7]">
+          <img
+            src={homeImg}
+            alt="Lost and found illustration"
+            className="w-full object-cover"
+          />
         </div>
       </div>
     </section>
