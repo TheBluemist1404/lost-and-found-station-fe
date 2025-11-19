@@ -36,12 +36,12 @@ function useScrollFadeIn() {
 function HeroSection() {
   return (
     <section
-      className="relative h-screen overflow-hidden bg-cover bg-center items-center justify-between flex"
+      className="relative h-screen overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${bkuImg})` }}
     >
-      <div className="absolute inset-0 bg-wood bg-cover opacity-80 mix-blend-multiply backdrop-blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-wood bg-cover opacity-80 mix-blend-multiply backdrop-blur-3xl" />
 
-      <div className="relative z-10 w-full h-full flex max-w-7xl items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+      <div className="relative z-10 w-full h-full mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
         <div className="max-w-3xl space-y-4 sm:space-y-6 md:space-y-8">
           <h1 className="font-bold leading-[0.9] text-yellow text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
             Lost and Found
@@ -61,7 +61,7 @@ function HeroSection() {
               </span>
               items back home.
             </p>
-            <button className=" bg-yellow px-10 sm:px-12 md:px-16 lg:px-20 py-4 sm:py-5 md:py-6 lg:py-8 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-black shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
+            <button className="rounded-full bg-yellow px-10 sm:px-12 md:px-16 lg:px-20 py-4 sm:py-5 md:py-6 lg:py-8 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-black shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
               Join our journey
             </button>
           </div>
