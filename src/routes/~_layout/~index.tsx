@@ -61,7 +61,7 @@ function HeroSection() {
               </span>
               items back home.
             </p>
-            <button className="rounded-full bg-yellow px-10 sm:px-12 md:px-16 lg:px-20 py-4 sm:py-5 md:py-6 lg:py-8 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-black shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
+            <button className="bg-yellow px-10 sm:px-12 md:px-16 lg:px-20 py-4 sm:py-5 md:py-6 lg:py-8 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-black shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
               Join our journey
             </button>
           </div>
