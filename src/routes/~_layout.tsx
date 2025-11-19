@@ -7,9 +7,11 @@ export const Route = createFileRoute('/_layout')({
 
 function RouteComponent() {
   return (
-    <div className="w-screen h-screen flex flex-col background-gradient">
+    <>
       <Header />
-      <Outlet />
-    </div>
+      <div className="w-screen h-screen flex flex-col">
+        <Outlet />
+      </div>
+    </>
   )
 }
