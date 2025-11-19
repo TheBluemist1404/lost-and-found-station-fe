@@ -17,7 +17,7 @@ function RouteComponent() {
       {/* LEFT */}
       <Link
         to="/"
-        className="absolute top-6 sm:top-8 md:top-10 left-6 sm:left-8 md:left-10 z-10 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700"
+        className="absolute top-25 left-6 sm:left-8 md:left-10 z-10 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700"
       >
         <img src={arrowIcon} alt="Back" className="h-4 w-4 md:h-5 md:w-5" />
         <span className="underline-offset-2 hover:underline">
