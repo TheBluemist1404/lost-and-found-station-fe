@@ -20,7 +20,7 @@ function useScrollFadeIn() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          observer.unobserve(entry.target) // animate only once
+          observer.unobserve(entry.target)
         }
       },
       { threshold: 0.2 },
@@ -36,47 +36,52 @@ function useScrollFadeIn() {
 function HeroSection() {
   return (
     <section
-      className="relative h-screen w-full bg-cover bg-center flex flex-col items-center justify-center py-40 px-20"
+      className="relative h-screen w-full bg-cover bg-center items-center justify-center py-40 px-20"
       style={{ backgroundImage: `url(${bkuImg})` }}
     >
       <div className="pointer-events-none absolute top-0 left-0 h-full w-full bg-wood opacity-90 backdrop-blur-3xl" />
 
-      <div className="relative z-10 w-full h-full flex flex-row gap-12 items-stretch justify-between px-6 sm:px-8 md:px-16">
-        <div className="flex-1 h-full flex flex-col justify-between">
-          <div className="flex flex-col gap-12">
-            <h1 className="font-bold text-yellow text-4xl sm:text-6xl lg:text-8xl/tight">
+      <div className="relative z-10 w-full h-full flex flex-row items-stretch justify-between gap-12 px-10">
+        <div className="flex flex-col flex-1 justify-center gap-50">
+          <div className="flex flex-col justify-between items center gap-8">
+            <h1 className="font-bold text-yellow text-4xl sm:text-6xl md:text-9xl">
               Lost and Found Station
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
+            <p className="text-base sm:text-xl md:text-3xl text-white">
               The on-campus support to bring belongings back to their owners.
             </p>
           </div>
 
-          <div className="w-full flex flex-row items-center justify-between flex-wrap">
-            <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-white flex flex-row items-center gap-2">
-              <span>We</span> <span>have</span> <span>returned</span>
-              <span className="p-2 mx-2 border-2 border-yellow text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-yellow">
+          <div className="flex flex-row gap-20">
+            <p className="flex flex-row items-center gap-2 text-white text-base sm:text-lg md:text-3xl">
+              <span>We</span>
+              <span>have</span>
+              <span>returned</span>
+              <span className="p-3 mx-4 border-2 border-yellow text-yellow font-semibold text-xl sm:text-2xl md:text-4xl">
                 20
               </span>
-              <span>items</span> <span>back</span> home
+              <span>items</span>
+              <span>back</span>
+              <span>home.</span>
             </p>
-            <button className="bg-yellow rounded-md px-6 py-4 text-2xl font-medium text-black shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
+            <button className="px-6 rounded-md bg-yellow text-black text-xl sm:text-2xl font-medium shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
               Join our journey
             </button>
           </div>
         </div>
 
-        <div className="relative hidden md:flex items-center justify-center flex-[0.7]">
+        <div className="relative hidden md:flex flex-[0.7] items-center justify-center">
           <img
             src={homeImg}
             alt="Lost and found illustration"
-            className="w-full object-cover"
+            className="w-full max-w-5xl object-contain"
           />
         </div>
       </div>
     </section>
   )
 }
+
 function IntroSection() {
   const { ref, isVisible } = useScrollFadeIn()
 
@@ -89,7 +94,7 @@ function IntroSection() {
           (isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8')
         }
       >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
+        <h2 className="font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl">
           Welcome to Lost and Found Station!
         </h2>
 
@@ -149,8 +154,8 @@ function HowItWorksSection() {
             </span>
             <h3 className="mb-3 text-lg sm:text-xl font-semibold">Return</h3>
             <p className="text-sm sm:text-base text-gray-700">
-              Arrange a meet-up at the Lost &amp; Found Station to verify
-              ownership and return belongings safely.
+              Contact the finder or owner through the contacts provided to
+              arrange the return of the item.
             </p>
           </div>
         </div>
