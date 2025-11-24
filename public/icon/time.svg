@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" id="Layer_3" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<path d="M24,0C10.745,0,0,10.746,0,24c0,13.255,10.745,24,24,24s24-10.745,24-24C48,10.746,37.255,0,24,0z M24,44   C12.954,44,4,35.046,4,24S12.954,4,24,4s20,8.954,20,20S35.046,44,24,44z"/>
+<rect height="3" width="3" x="22.5" y="7"/>
+<rect height="3" width="3" x="7" y="22.5"/>
+<rect height="3" transform="matrix(0.707 0.7072 -0.7072 0.707 19.43 -20.9842)" width="3" x="33.541" y="11.458"/>
+<rect height="3" transform="matrix(-0.7069 -0.7073 0.7073 -0.7069 -2.2715 68.8157)" width="3" x="11.621" y="33.379"/>
+<rect height="3" transform="matrix(0.7071 0.7071 -0.7071 0.7071 13.0402 -5.4013)" width="3" x="11.54" y="11.54"/>
+<rect height="3" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 34.9596 84.4016)" width="3" x="33.46" y="33.46"/>
+<polygon points="38,22.5 22.5,22.5 22.5,24 22.5,25.5 22.5,38 22.5,41 25.5,41 25.5,38 25.5,25.5 38,25.5 41,25.5 41,22.5  "/>
+</g>
+</svg>
