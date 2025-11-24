@@ -24,7 +24,7 @@ type Props = {
 
 const LostFoundCard: FC<Props> = ({ item }) => {
   return (
-    <div className="flex flex-col rounded-[28px] bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-[#F3F3F3] overflow-hidden">
+    <div className="flex flex-col rounded-[28px] bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)] border border-[#F3F3F3] overflow-hidden max-w-70">
       <img
         src={item.imageUrl}
         alt={item.title}
@@ -44,7 +44,7 @@ const LostFoundCard: FC<Props> = ({ item }) => {
           {item.title}
         </p>
 
-        <div className="space-y-1 text-[13px] leading-snug">
+        <div className="space-y-1 text-[13px]">
           <p>
             <img src={personIcon} alt="" className="mr-1 size-5 inline-block" />
             <span className="text-[#EB7979]">{item.person}</span>
@@ -67,9 +67,7 @@ const LostFoundCard: FC<Props> = ({ item }) => {
           </p>
         </div>
 
-        <p className="mt-2 text-[13px] leading-snug text-[#737373]">
-          {item.description}
-        </p>
+        <p className="mt-2 text-[13px] text-[#737373]">{item.description}</p>
       </div>
     </div>
   )

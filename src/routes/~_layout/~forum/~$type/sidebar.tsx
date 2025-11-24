@@ -14,7 +14,7 @@ const categories = [
 
 export default function SideBar() {
   return (
-    <div className="w-[260px] h-full px-10 py-6 bg-white border-r border-[#e2d8c9]">
+    <div className="w-[260px] h-full px-10 py-6 bg-white border-r border-[#e2d8c9] fixed">
       {/* TAGS */}
       <h2 className="text-[#3b2b0b] text-2xl font-semibold mb-3">Tags</h2>
       <hr className="border-t border-[#e2d8c9] mb-5" />

@@ -81,7 +81,7 @@ function RouteComponent() {
   return (
     <div className="flex flex-row w-full h-full pt-22">
       <SideBar />
-      <div className="bg-white flex-1 flex flex-col pr-38 pl-20 pt-7">
+      <div className="bg-white flex-1 flex flex-col pr-38 pt-7 pl-[300px]">
         <p className="text-[86px] font-medium">
           {params.type == 'lost' ? 'Lost' : 'Found'} Items
         </p>
@@ -129,7 +129,7 @@ function RouteComponent() {
         </div>
 
         {/* items grid */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8">
+        <div className="mt-6 flex-1 flex flex-row flex-wrap items-start gap-6 pb-8 overflow-auto">
           {mockItems.map((item) => (
             <LostFoundCard key={item.id} item={item} />
           ))}
