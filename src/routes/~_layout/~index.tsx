@@ -36,45 +36,46 @@ function useScrollFadeIn() {
 function HeroSection() {
   return (
     <section
-      className="relative h-screen w-full bg-cover bg-center items-center justify-center py-40 px-20"
+      className="relative h-screen overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${bkuImg})` }}
     >
       <div className="pointer-events-none absolute top-0 left-0 h-full w-full bg-wood opacity-90 backdrop-blur-3xl" />
 
-      <div className="relative z-10 w-full h-full flex flex-row items-stretch justify-between gap-12 px-10">
-        <div className="flex flex-col flex-1 justify-center gap-50">
+      <div className="relative z-10 w-full h-full flex flex-row items-stretch justify-between gap-12 px-40">
+        <div className="flex flex-col flex-1 justify-center gap-40">
           <div className="flex flex-col justify-between items center gap-8">
-            <h1 className="font-bold text-yellow text-4xl sm:text-6xl md:text-9xl">
+            <h1 className="font-bold text-yellow text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
               Lost and Found Station
             </h1>
-            <p className="text-base sm:text-xl md:text-3xl text-white">
+            <p className="text-base sm:text-xl md:text-2xl text-white">
               The on-campus support to bring belongings back to their owners.
             </p>
           </div>
 
-          <div className="flex flex-row gap-20">
-            <p className="flex flex-row items-center gap-2 text-white text-base sm:text-lg md:text-3xl">
+          <div className="flex flex-wrap items-center gap-6">
+            <p className="flex flex-row text-white text-base sm:text-lg lg:text-2xl xl:text-3xl gap-2 items-center">
               <span>We</span>
               <span>have</span>
               <span>returned</span>
-              <span className="p-3 mx-4 border-2 border-yellow text-yellow font-semibold text-xl sm:text-2xl md:text-4xl">
+              <span className="p-2 mx-2 border-2 border-yellow text-yellow font-semibold text-base sm:text-lg md:text-2xl">
                 20
               </span>
               <span>items</span>
               <span>back</span>
               <span>home.</span>
             </p>
-            <button className="px-6 rounded-md bg-yellow text-black text-xl sm:text-2xl font-medium shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer">
+
+            <button className="flex-shrink-0 px-6 rounded-md bg-yellow text-black text-lg sm:text-xl font-medium shadow-lg transition duration-300 ease-in-out hover:brightness-110 cursor-pointer mx-2 py-3">
               Join our journey
             </button>
           </div>
         </div>
 
-        <div className="relative hidden md:flex flex-[0.7] items-center justify-center">
+        <div className="relative hidden md:flex flex-[0.7] max-w-4xl items-center justify-center">
           <img
             src={homeImg}
             alt="Lost and found illustration"
-            className="w-full max-w-5xl object-contain"
+            className="w-full object-contain"
           />
         </div>
       </div>
