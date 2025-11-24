@@ -79,7 +79,7 @@ function RouteComponent() {
   }
 
   return (
-    <div className="flex flex-row w-full h-full ">
+    <div className="flex flex-row w-full h-full pt-22">
       <SideBar />
       <div className="bg-white flex-1 flex flex-col pr-38 pl-20 pt-7">
         <p className="text-[86px] font-medium">
