@@ -3,6 +3,10 @@
 @theme {
   --color-red: #c84c4c;
   --color-background-dark: #101010;
+  --color-yellow: #ffd600;
+  --color-wood: #2e2600;
+  --color-cloudwhite: #f9fafb;
+  --color-gray: #777777;
 }
 
 @layer utilities {
