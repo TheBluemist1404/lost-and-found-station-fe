@@ -4,7 +4,7 @@ import infoAvatar from '/img/toan.jpg'
 
 export default function Header() {
   return (
-    <div className="w-full h-22 bg-white flex flex-frow justify-between items-center py-8">
+    <div className="w-full h-22 bg-white flex flex-frow justify-between items-center py-8 border-b-1">
       <div className="ml-8">
         <img src={homeIcon} alt="" />
       </div>

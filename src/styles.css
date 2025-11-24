@@ -3,6 +3,7 @@
 @theme {
   --color-red: #c84c4c;
   --color-background-dark: #101010;
+  --color-home: #ffd600;
 }
 
 @layer utilities {
